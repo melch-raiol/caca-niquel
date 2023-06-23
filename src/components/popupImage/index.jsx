@@ -1,14 +1,14 @@
 import { useState } from "react";
-import "./styles.css"
-import Image from "../../assets/novo-caca-niquel.png"
-import XIcon from "../../assets/x-icon.png"
 import InputMask from 'react-input-mask';
-import YouTube from 'react-youtube';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import YouTube from 'react-youtube';
+import Image from "../../assets/novo-caca-niquel.png";
+import XIcon from "../../assets/x-icon.png";
+import "./styles.css";
 
 
-export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setOpenPopup }) {
+export function PopupImage({ openPopupImg, setOpenPopup }) {
 
     const videoId = 'G3LZTZ-OraQ';
     const [selectedOption, setSelectedOption] = useState('');
@@ -91,6 +91,7 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
 
     return (
         <>
+            <ToastContainer />
             <div className="container-popup">
                 <img
                     className="x-close"
@@ -151,7 +152,6 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
                     >Salvar</button>
                 </form>
             </div>
-            <ToastContainer />
         </>
     )
 }
