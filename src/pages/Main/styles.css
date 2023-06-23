@@ -1,0 +1,16 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+}
+
+.btn-main {
+  color: white;
+  /* position: absolute; */
+}
