@@ -1,5 +1,5 @@
 .container-popup {
-  height: clamp(550px, 100%, 750px);
+  height: clamp(550px, 100%, 850px);
   width: clamp(300px, 90%, 500px);
 
   display: flex;
@@ -22,6 +22,7 @@ span {
 .x-close {
   height: 5%;
   width: 5%;
+
   border-radius: 50%;
   position: absolute;
 
@@ -35,6 +36,7 @@ span {
 .x-close:hover {
   height: 5.4%;
   width: 5.4%;
+
   padding: 5px;
   background-color: #0d834a;
 }
@@ -42,12 +44,14 @@ span {
 .imagem {
   height: clamp(200px, 50%, 500px);
   width: clamp(200px, 80%, 500px);
+
   background-color: black;
 }
 
 .video {
   height: clamp(200px, 50%, 500px);
   width: clamp(200px, 80%, 500px);
+
   border: 2px solid black;
 }
 
@@ -61,11 +65,10 @@ span {
   justify-content: space-around;
 }
 
-.div-form > span {
-  margin-right: 100px;
-}
-
 .input {
+  height: clamp(10px, 70%, 35px);
+  width: clamp(100px, 70%, 500px);
+
   padding: 10px;
   border: 1px solid gray;
   border-radius: 7px 7px;
@@ -78,6 +81,25 @@ span {
   padding: 10px;
   border: 1px solid gray;
   border-radius: 7px 7px;
+  color: gray;
+}
+
+.check-box {
+  width: clamp(100px, 70%, 500px);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.check-box > input {
+  cursor: pointer;
+}
+
+.check-box > span {
+  margin-left: 10px;
+  font-size: 12px;
 }
 
 .error {
@@ -89,8 +111,17 @@ span {
 }
 
 .btn-save {
+  height: clamp(20px, 60%, 30px);
   width: clamp(100px, 60%, 300px);
+
+  border-radius: 7px;
 
   color: white;
   background-color: rgb(16, 116, 211);
+  border: 2px solid rgb(10, 81, 146);
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background-color: rgb(44, 140, 230);
 }

@@ -27,16 +27,14 @@ export function Main() {
     return (
         <div className="container">
             <button
-                className="btn-main"
+                className="btn-save btn-main"
                 onClick={() => handleOpenImage()}
             >Popup Imagem</button>
-
             <button
-                className="btn-main"
+                className="btn-save btn-main"
                 onClick={() => handlePopupVideo()}
 
             >Popup Video</button>
-
             {openPopup && <PopupImage
                 setOpenPopup={setOpenPopup}
                 setOpenPopupImg={setOpenPopupImg}
