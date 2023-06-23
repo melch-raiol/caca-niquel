@@ -11,6 +11,7 @@
 }
 
 .btn-main {
+  margin-top: 10px;
   color: white;
-  /* position: absolute; */
+  background-color: blue;
 }
