@@ -8,15 +8,17 @@
   justify-content: space-between;
 
   position: relative;
-  background-color: #0f9d58;
-  border-radius: 7px 7px;
+  background-color: rgb(104, 28, 104);
+  /* background-color: rgb(2, 37, 2); */
+  border-radius: 20px;
 }
 
 h1,
 h2,
 span {
-  color: #ffd700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "PT sans", sans-serif;
+  color: #e5f50a;
+  /* text-shadow: 2px 2px 4px rgba(206, 196, 250, 0.5); */
 }
 
 .x-close {
@@ -25,7 +27,8 @@ span {
 
   border-radius: 50%;
   position: absolute;
-
+  color: white;
+  font-size: 200%;
   top: 30px;
   right: 10px;
   transform: translate(-50%, -50%);
@@ -42,8 +45,10 @@ span {
 }
 
 .imagem {
-  height: clamp(200px, 50%, 500px);
-  width: clamp(200px, 80%, 500px);
+  height: clamp(100px, 50%, 300px);
+  width: clamp(100px, 80%, 300px);
+
+  margin-top: 20px;
 
   background-color: black;
 }
@@ -124,4 +129,10 @@ span {
 
 .btn-save:hover {
   background-color: rgb(44, 140, 230);
+}
+
+.btn-green {
+  height: clamp(10px, 70%, 35px);
+  width: clamp(100px, 70%, 500px);
+  background-color: rgb(17, 202, 17);
 }

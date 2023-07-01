@@ -1,25 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css"
-import Image from "../../assets/novo-caca-niquel.png"
-import XIcon from "../../assets/x-icon.png"
+import Image from "../../assets/big-win.png"
 import InputMask from 'react-input-mask';
 import YouTube from 'react-youtube';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setOpenPopup }) {
+export function PopupImage({ openPopupImg, setOpenPopup }) {
 
+    let errorMessage = ''
     const videoId = 'G3LZTZ-OraQ';
     const [checked, setChecked] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
-    const [error, setError] = useState('');
+    const [error, setError] = useState()
+
     const [form, setForm] = useState({
         name: '',
         email: '',
         phone: '',
         gender: ''
     });
+
+    const openAlert = () => {
+        return toast.error(`${errorMessage}`, {
+            position: toast.POSITION.TOP_CENTER,
+        });
+    }
+
+    useEffect(() => {
+        clearForm()
+    }, [setOpenPopup])
 
     const handleChange = (e) => {
         setSelectedOption(e.target.value);
@@ -29,23 +40,33 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
         e.preventDefault();
 
         if (!form.name) {
-            setError('o nome é obrigatório!');
+            setError(true)
+            errorMessage = 'o nome é obrigatório!'
+            openAlert()
             return;
         }
         if (!form.email) {
-            setError('o email é obrigatório!');
+            setError(true)
+            errorMessage = 'o email é obrigatório!'
+            openAlert()
             return;
         }
         if (!form.phone) {
-            setError('a número de celular é obrigatória');
+            setError(true)
+            errorMessage = 'o celular é obrigatório!'
+            openAlert()
             return;
         }
         if (!selectedOption) {
-            setError('O gênero obrigatória');
+            setError(true)
+            errorMessage = 'O gênero obrigatória'
+            openAlert()
             return;
         }
         if (!checked) {
-            setError("selecione o quadro para concordar com o uso dos seus dados")
+            setError(true)
+            errorMessage = "selecione o quadro para concordar com o uso dos seus dados"
+            openAlert()
             return;
         }
         handleAddUser();
@@ -65,7 +86,6 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
 
         clearForm()
         closePopupFunction()
-        openAlert()
     }
 
     const clearForm = () => {
@@ -88,12 +108,6 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
         setOpenPopup(false)
     }
 
-    const openAlert = () => {
-        return toast.success("CADASTRO ENVIADO COM SUCESSO", {
-            position: toast.POSITION.BOTTOM_RIGHT,
-        });
-    }
-
     const handleCheckboxChange = () => {
         setChecked(!checked);
     };
@@ -102,13 +116,11 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
         <>
             <ToastContainer />
             <div className="container-popup">
-                <img
+                <h3
                     className="x-close"
-                    src={XIcon}
                     onClick={closePopupFunction}
-                />
-                <h1>caça-níquel</h1>
-                <h2>Venha conferir o nosso jogo</h2>
+                >X</h3>
+
                 {openPopupImg ?
                     <img
                         className="imagem"
@@ -119,6 +131,8 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
                         <YouTube videoId={videoId} />
                     </div>
                 }
+                <h1>Caça-Níquel</h1>
+                <h2>Venha conferir o nosso jogo</h2>
                 <form
                     className="div-form"
                     onSubmit={handleSubmit}
@@ -164,9 +178,8 @@ export function PopupImage({ setOpenPopupImg, openPopupVideo, openPopupImg, setO
                         />
                         <span>concordo com o uso dos meu dados</span>
                     </div>
-                    <span className="span-error">{error}</span>
                     <button
-                        className="btn-save"
+                        className="btn-save btn-green"
                     >Salvar</button>
                 </form>
             </div>
