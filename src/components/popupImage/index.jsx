@@ -24,7 +24,7 @@ export function PopupImage({ openPopupImg, setOpenPopup }) {
 
     const openAlert = () => {
         return toast.error(`${errorMessage}`, {
-            position: toast.POSITION.TOP_CENTER,
+            position: toast.POSITION.BOTTOM_CENTER,
         });
     }
 
@@ -127,9 +127,7 @@ export function PopupImage({ openPopupImg, setOpenPopup }) {
                         src={Image}
                     />
                     :
-                    <div className="video">
-                        <YouTube videoId={videoId} />
-                    </div>
+                    <YouTube videoId={videoId} className="video" />
                 }
                 <h1>Caça-Níquel</h1>
                 <h2>Venha conferir o nosso jogo</h2>
@@ -148,7 +146,7 @@ export function PopupImage({ openPopupImg, setOpenPopup }) {
                     />
                     <input
                         className={error ? 'input error' : 'input'}
-                        type='text'
+                        type='email'
                         placeholder='Email'
                         name='email'
                         value={form.email}
