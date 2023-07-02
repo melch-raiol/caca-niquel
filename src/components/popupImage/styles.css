@@ -9,7 +9,6 @@
 
   position: relative;
   background-color: rgb(104, 28, 104);
-  /* background-color: rgb(2, 37, 2); */
   border-radius: 20px;
 }
 
@@ -18,7 +17,6 @@ h2,
 span {
   font-family: "PT sans", sans-serif;
   color: #e5f50a;
-  /* text-shadow: 2px 2px 4px rgba(206, 196, 250, 0.5); */
 }
 
 .x-close {
@@ -32,16 +30,7 @@ span {
   top: 30px;
   right: 10px;
   transform: translate(-50%, -50%);
-
   cursor: pointer;
-}
-
-.x-close:hover {
-  height: 5.4%;
-  width: 5.4%;
-
-  padding: 5px;
-  background-color: #0d834a;
 }
 
 .imagem {
@@ -58,7 +47,6 @@ span {
   width: 70%;
   position: relative;
   margin-top: 5%;
-
   border: 2px solid black;
 }
 

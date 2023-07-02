@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import "./styles.css"
-import Image from "../../assets/big-win.png"
 import InputMask from 'react-input-mask';
-import YouTube from 'react-youtube';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import YouTube from 'react-youtube';
+import Image from "../../assets/big-win.png";
+import "./styles.css";
 
 
 export function PopupImage({ openPopupImg, setOpenPopup }) {
@@ -120,7 +120,6 @@ export function PopupImage({ openPopupImg, setOpenPopup }) {
                     className="x-close"
                     onClick={closePopupFunction}
                 >X</h3>
-
                 {openPopupImg ?
                     <img
                         className="imagem"
@@ -161,7 +160,11 @@ export function PopupImage({ openPopupImg, setOpenPopup }) {
                         value={form.phone}
                         onChange={(e) => handleChangeForm(e)}
                     />
-                    <select id="selectOption" className={error ? 'div-select error' : 'div-select'} value={selectedOption} onChange={handleChange} >
+                    <select id="selectOption"
+                        className={error ? 'div-select error' : 'div-select'}
+                        value={selectedOption}
+                        onChange={handleChange}
+                    >
                         <option value="">Selecione o Gênero</option>
                         <option value="feminino">Feminino</option>
                         <option value="masculino">Masculino</option>

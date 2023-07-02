@@ -29,12 +29,14 @@ export function Main() {
             <button
                 className="btn-save btn-main"
                 onClick={() => handleOpenImage()}
-            >Popup Imagem</button>
+            >Popup Imagem
+            </button>
             <button
                 className="btn-save btn-main"
                 onClick={() => handlePopupVideo()}
 
-            >Popup Video</button>
+            >Popup Video
+            </button>
             {openPopup && <PopupImage
                 setOpenPopup={setOpenPopup}
                 setOpenPopupImg={setOpenPopupImg}
